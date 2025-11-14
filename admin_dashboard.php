@@ -23,18 +23,22 @@ $subjects = $conn->query("
 <!doctype html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>Admin Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dashboard">
 <div class="container">
   <h3>Admin Dashboard</h3>
   <nav>
     <a class="logout-btn" href="logout.php">Logout</a>
   </nav>
+
   <div class="section-box">
     <h4>All Users (Teachers & Students)</h4>
     <a class="btn" href="add_user.php">Add New User</a>
+
     <table>
       <tr>
         <th>ID</th>
@@ -45,6 +49,7 @@ $subjects = $conn->query("
         <th>Role</th>
         <th>Action</th>
       </tr>
+
       <?php while($u = $users->fetch_assoc()): ?>
       <tr>
         <td><?= $u['id']; ?></td>
@@ -63,6 +68,7 @@ $subjects = $conn->query("
       <?php endwhile; ?>
     </table>
   </div>
+
   <div class="section-box">
     <h4>Subjects</h4>
     <a class="btn" href="add_subject.php">Add Subject</a>
@@ -75,6 +81,7 @@ $subjects = $conn->query("
         <th>Code</th>
         <th>Assigned Teacher</th>
       </tr>
+
       <?php while($s = $subjects->fetch_assoc()): ?>
       <tr>
         <td><?= $s['id']; ?></td>
@@ -85,13 +92,15 @@ $subjects = $conn->query("
       <?php endwhile; ?>
     </table>
   </div>
-
+  
   <div class="section-box">
     <h4>Results & Analytics</h4>
 
     <a class="btn" href="calculate_gpa.php">Recalculate GPA</a>
     <a class="btn" href="analytics.php">Analytics</a>
+
   </div>
+
   <p class="small">2025 ResultVerse | Developed by Tanjina Akter</p>
 </div>
 </body>

@@ -108,11 +108,12 @@ body.dashboard {
 }
 
 .dashboard .container {
-  max-width: 1000px;
+  max-width: 550px; 
   width: 95%;
-  padding: 30px;
-  text-align: left;
+  padding: 25px;
+  text-align: center;
 }
+
 .dashboard h3 {
   text-align: center;
   color: #1f4e79;
@@ -206,4 +207,14 @@ tr:hover {
   color: #777;
   margin-top: 30px;
   font-size: 0.9em;
+}
+.analytics-box {
+  max-width: 750px;
+  width: 95%;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin: 50px auto;
+  text-align: center;
 }

@@ -34,7 +34,78 @@ $res = $marks->get_result();
 <html>
 <head>
 <title>View Marks</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body.dashboard {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef3f8;
+    padding: 40px 0;
+    color: #333;
+}
+.result-container {
+    max-width: 800px;
+    width: 95%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+.result-container h3 {
+    color: #1f4e79;
+    margin-bottom: 20px;
+}
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.result-table th {
+    background: linear-gradient(to right, #1f4e79, #2f6aa6);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+.result-table td {
+    background: #ffffff;
+    padding: 12px;
+    border-bottom: 1px solid #e5eef5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.result-table tr:nth-child(even) td {
+    background: #f5f9ff;
+}
+.result-table tr:hover td {
+    background: #e7f1ff;
+}
+.btn {
+    display: inline-block;
+    background: #1f4e79;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #3c78a4;
+    transform: translateY(-2px);
+}
+.bottom-btns {
+    margin-top: 20px;
+}
+.small {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+</style>
 </head>
 <body class="dashboard">
 

@@ -70,13 +70,107 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
   <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- PAGE-SPECIFIC CSS -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    body:not(.dashboard) .container {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      padding: 40px 35px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      margin: 60px auto;
+    }
+
+    form {
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      transition: 0.3s;
+      background: #f8f9fa;
+      font-size: 15px;
+    }
+
+    input:focus {
+      border-color: #1f4e79;
+      background: #eef5ff;
+      outline: none;
+    }
+
+    .btn {
+      background: #1f4e79;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      width: 100%;
+      margin-top: 20px;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: #3c78a4;
+      transform: scale(1.03);
+    }
+
+    p[style*='color:red'] {
+      background: #fde7e7;
+      border: 1px solid #f5b5b5;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    p a {
+      color: #1f4e79;
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
 </head>
 <body>
+
 <div class="container">
   <h3>Welcome Back</h3>
   <h4>Sign in to your ResultVerse account</h4>
+
   <?php if($err) echo "<p style='color:red;'>$err</p>"; ?>
+  
   <form method="post">
     <input type="hidden" name="role" value="<?php echo htmlspecialchars($role ?: 'student'); ?>">
     <label>Username</label>
@@ -85,7 +179,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" name="password" required>
     <button class="btn" type="submit">Sign In</button>
   </form>
+
   <p><a href="index.php">Back</a></p>
 </div>
+
 </body>
 </html>

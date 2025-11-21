@@ -30,21 +30,97 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Add User</title><link rel="stylesheet" href="style.css"></head>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Add User</title>
+
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 60px auto;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  .btn {
+    background: #1f4e79;
+    color: #fff;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #3c78a4;
+    transform: scale(1.03);
+  }
+
+  p a {
+    color: #1f4e79;
+    text-decoration: none;
+  }
+
+  p a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</head>
 <body>
 <div class="container">
   <h3>Add User</h3>
   <?php if($err) echo "<p style='color:red;'>$err</p>"; ?>
   <?php if($msg) echo "<p style='color:green;'>$msg</p>"; ?>
+  
   <form method="post">
     <label>Name</label><input name="name" required>
     <label>Username</label><input name="username" required>
     <label>Email</label><input name="email" type="email" required>
     <label>Role</label>
-    <select name="role"><option value="student">Student</option><option value="teacher">Teacher</option></select>
+    <select name="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>
     <label>Password</label><input name="password" required>
     <button class="btn" type="submit">Add</button>
   </form>
+
   <p><a href="admin_dashboard.php">Back</a></p>
 </div>
-</body></html>
+</body>
+</html>

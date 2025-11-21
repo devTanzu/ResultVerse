@@ -33,7 +33,93 @@ $res = $stmt->get_result();
 <html>
 <head>
 <title>Analytics</title>
-<link rel="stylesheet" href="style.css">
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body.dashboard {
+        background-color: #f4f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .analytics-box {
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        width: 100%;
+        max-width: 900px;
+    }
+    .analytics-box h3 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #333;
+    }
+    table th, table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    table th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+    }
+    table tr:hover {
+        background-color: #f9f9f9;
+    }
+
+ 
+    .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 25px;
+        background-color: #4a90e2;
+        color: #fff;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+    .btn:hover {
+        background-color: #357ab8;
+    }
+
+    .small {
+        text-align: center;
+        font-size: 13px;
+        color: #888;
+        margin-top: 25px;
+    }
+
+
+    @media(max-width: 600px) {
+        .analytics-box {
+            padding: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 8px 20px;
+        }
+    }
+</style>
 </head>
 <body class="dashboard">
 <div class="analytics-box">
@@ -55,7 +141,7 @@ $res = $stmt->get_result();
       <?php endwhile; ?>
     </table>
 
-    <a class="btn" href="student_dashboard.php" style="margin-top:20px;">Back</a>
+    <a class="btn" href="student_dashboard.php">Back</a>
 
   <?php else: ?>
     <table>
@@ -71,7 +157,7 @@ $res = $stmt->get_result();
       <?php endwhile; ?>
     </table>
 
-    <a class="btn" href="admin_dashboard.php" style="margin-top:20px;">Back</a>
+    <a class="btn" href="admin_dashboard.php">Back</a>
   <?php endif; ?>
 
   <p class="small">2025 ResultVerse | Developed by Tanjina Akter</p>
